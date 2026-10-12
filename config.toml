@@ -1,0 +1,66 @@
+# ===================== CONFIGURACIÓN =====================
+# Las rutas relativas se resuelven respecto a la carpeta de este archivo.
+
+[smtp]
+host     = "smtp.gmail.com"   # Outlook: "smtp.office365.com" | Zoho: "smtp.zoho.com"
+port     = 587                # 587 (starttls) | 465 (ssl) | 25 (none)
+security = "starttls"         # "starttls" | "ssl" | "none"
+timeout  = 30                 # segundos
+
+[excel]
+file         = "data/contactos.xlsx"   # .xlsx, .xls o .csv
+sheet        = 0                       # índice (0 = primera hoja) o nombre: "Hoja1"
+email_column = "Correo"                # columna con el email
+
+[message]
+# Usa {{NombreColumna}} con cualquier columna de tu Excel (Empresa, Telefono, etc.)
+subject       = "Rafael Alvarez | Desarrollador Fullstack: propuesta para {{Empresa}}"
+html_template = "templates/plantilla.html"
+text_template = "templates/plantilla.txt"   # "" = se genera automáticamente desde el HTML
+from_name     = "Rafael Alvarez"
+reply_to      = "alvarezrafaelat@gmail.com"
+list_unsubscribe = ""                  # ej: "mailto:baja@tudominio.com" (recomendado)
+attachments   = ["data/CV_Rafael_Alvarez.pdf"]                     # ej: ["data/catalogo.pdf"]
+
+[sending]
+delay_min            = 3     # pausa aleatoria mínima entre correos (seg)
+delay_max            = 8     # pausa aleatoria máxima (seg)
+batch_size           = 20    # cada N correos hace una pausa larga (0 = desactivar)
+batch_pause          = 60    # duración de la pausa larga (seg)
+max_per_run          = 0     # máximo de correos por ejecución (0 = sin límite). Gmail gratis ≈ 500/día
+max_retries          = 3     # reintentos ante errores temporales
+retry_wait           = 10    # espera base entre reintentos (seg, se multiplica por intento)
+max_consecutive_errors = 5   # aborta si fallan N seguidos (evita bloqueos de cuenta)
+
+[files]
+log  = "logs/mailer.log"
+sent = "logs/enviados.csv"     # historial: no se reenvía a quien ya figure como ok/bounced/rechazado
+trace    = "logs/trazabilidad.csv"   # TODO evento: validación, envío, rebote, errores (con n.º de fila)
+rejected = "logs/rechazados.csv"     # filas del Excel que debes corregir (se reescribe en cada corrida)
+
+[validation]
+check_email_dns  = true              # comprueba que el dominio del correo exista y reciba correo (necesita internet)
+dns_timeout      = 10
+validate_phone   = true              # valida teléfonos venezolanos (+58 412/414/416/422/424/426 o fijos 2xx)
+phone_column     = "Telefono"
+phone_required   = false             # true = rechaza filas sin teléfono
+allow_landline   = true              # false = solo móviles
+on_invalid_phone = "warn"            # "skip" = no envía a filas con teléfono inválido | "warn" = envía y avisa
+
+[imap]                               # para: python main.py --check-bounces
+host = "imap.gmail.com"
+port = 993
+days = 3                             # cuántos días atrás buscar avisos de rebote
+
+[alerts]
+mode = "problems"                    # "problems" = te escribe si hubo fallos | "always" | "never"
+to   = ""                            # "" = te lo envía al correo remitente
+
+[whatsapp]                           # para: python wa.py
+template           = "templates/whatsapp.txt"
+name_column        = "Empresa"       # columna que se muestra como nombre del contacto
+mobile_only        = true            # WhatsApp solo en móviles (rechaza fijos)
+only_without_email = false           # true = solo filas SIN correo (las que no recibieron email)
+max_per_run        = 0               # 0 = sin límite
+history            = "logs/whatsapp_enviados.csv"
+links_file         = "logs/whatsapp_links.html"

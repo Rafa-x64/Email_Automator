@@ -1,0 +1,7 @@
+Hola equipo de {{Empresa}} 👋
+
+Soy *Rafael Alvarez*, desarrollador fullstack. Acabo de completar mis pasantías profesionales y me gustaría ofrecerles mi trabajo: sistemas web, backend y software nativo.
+
+Mi portafolio y proyectos: https://curriculum-zrjs.vercel.app
+
+¿Podríamos conversar un momento? Gracias por su tiempo.

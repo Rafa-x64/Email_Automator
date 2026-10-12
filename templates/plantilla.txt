@@ -1,0 +1,35 @@
+Hola equipo de {{Empresa}},
+
+Soy Rafael Alvarez, desarrollador fullstack. Acabo de completar mis pasantías profesionales en Tubrica y me gustaría ofrecerles mi trabajo: construyo sistemas completos, desde el levantamiento de requisitos hasta el despliegue, con arquitecturas limpias y enfoque en rendimiento.
+
+Stack: Vue, React, TypeScript, Node.js, PHP, Java, C, PostgreSQL.
+
+PROYECTOS DESTACADOS
+
+- Sinergy: app web offline-first para control de activos y mantenimiento industrial.
+  https://github.com/Rafa-x64/Sinergy
+
+- Komanda: sistema para restaurantes con POS, inventario y sincronización en tiempo real con cocina.
+  https://github.com/Rafa-x64/Komanda-Releases
+
+- SysPulse: monitor de sistema nativo para Linux a 60 fps, con Java y C.
+  https://github.com/Rafa-x64/SysPulse
+
+- QuickStock: gestión de inventario con PHP, MySQL y MVC puro.
+  https://github.com/Rafa-x64/QuickStock-Inventory-Management-System-in-PHP
+
+Portafolio completo: https://curriculum-zrjs.vercel.app
+
+Quedo atento a cualquier oportunidad de colaboración. Con gusto coordinamos una breve llamada o entrevista.
+
+Saludos cordiales,
+Rafael Alvarez
+Desarrollador Fullstack
+
+GitHub: https://github.com/Rafa-x64
+LinkedIn: https://www.linkedin.com/in/rafael-alvarez-353776379
+WhatsApp: https://wa.me/584143775386
+Correo: alvarezrafaelat@gmail.com
+
+---
+Recibes este mensaje porque tu empresa figura como contacto profesional. Si prefieres no recibir más correos, responde con la palabra BAJA.
